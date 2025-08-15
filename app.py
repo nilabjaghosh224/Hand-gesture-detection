@@ -52,15 +52,17 @@ def default_label_map_from_folders() -> dict:
 # ----------------------------
 # MediaPipe setup (reused)
 # ----------------------------
+import mediapipe as mp
+
 mp_hands = mp.solutions.hands
 mp_draw = mp.solutions.drawing_utils
 
 @st.cache_resource
 def mp_hands_detector(static=False):
-    # Use tracking for video; static for single images
     return mp_hands.Hands(
         static_image_mode=static,
         max_num_hands=2,
+        model_complexity=1,  # Explicit in new versions
         min_detection_confidence=0.3,
         min_tracking_confidence=0.3 if not static else 0.3
     )
@@ -368,3 +370,4 @@ elif page.startswith("4"):
 
     st.info("For continuous real-time video, run locally and adapt with OpenCV + `st.image()` loop. "
             "Browser-only deployments (Streamlit Cloud) support single-frame via camera/upload reliably.")
+
