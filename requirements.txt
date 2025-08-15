@@ -1,0 +1,16 @@
+# Python version
+python_version >= 3.10
+
+# Core web app
+streamlit==1.27.2
+
+# Computer vision
+opencv-python==4.7.0.68
+Pillow>=9.0.0
+
+# Hand landmark detection
+mediapipe==0.9.0.1
+
+# Machine learning
+scikit-learn==1.2.0
+numpy>=1.23.0
