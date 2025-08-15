@@ -1,6 +1,6 @@
 streamlit==1.27.2
 opencv-python-headless==4.7.0.68
 Pillow>=9.0.0
-mediapipe==0.9.0.1
+mediapipe>=0.10.9
 scikit-learn==1.2.0
 numpy>=1.23.0
